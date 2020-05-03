@@ -15,65 +15,86 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
-        appBar: AppBar(title: Center(child: Text('Xylophone')),backgroundColor: Colors.blueGrey.shade500,),
+        appBar: AppBar(title: Center(child: Text('Xylophone')),backgroundColor: Colors.black,),
         body: SafeArea(
       child: Column(
 
         crossAxisAlignment:CrossAxisAlignment.stretch,
       children: <Widget>[
       Expanded(
-        child: FlatButton(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
 
-        color: Colors.deepPurple,
-          onPressed: () {
-            playSound(1);
-          },
+          color: Colors.deepPurple,
+            onPressed: () {
+              playSound(1);
+            },
+          ),
         ),
       ),
-      Expanded(child:FlatButton(
-        color: Colors.blue,
-        onPressed: () {
-          playSound(2);
-        },
+      Expanded(child:Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: FlatButton(
+          color: Colors.blue,
+          onPressed: () {
+            playSound(2);
+          },
+        ),
       ),),
       Expanded(
-        child: FlatButton(
-          color: Colors.lightBlueAccent,
-          onPressed: () {
-            playSound(3);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.lightBlueAccent,
+            onPressed: () {
+              playSound(3);
+            },
+          ),
         ),
       ),
       Expanded(
-        child: FlatButton(
-          color: Colors.green,
-          onPressed: () {
-            playSound(4);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.green,
+            onPressed: () {
+              playSound(4);
+            },
+          ),
         ),
       ),
       Expanded(
-        child: FlatButton(
-          color: Colors.yellow,
-          onPressed: () {
-            playSound(5);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.yellow,
+            onPressed: () {
+              playSound(5);
+            },
+          ),
         ),
       ),
       Expanded(
-        child: FlatButton(
-          color: Colors.orange,
-          onPressed: () {
-            playSound(6);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.orange,
+            onPressed: () {
+              playSound(6);
+            },
+          ),
         ),
       ),
       Expanded(
-        child: FlatButton(
-          color: Colors.red,
-          onPressed: () {
-            playSound(7);
-          },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FlatButton(
+            color: Colors.red,
+            onPressed: () {
+              playSound(7);
+            },
+          ),
         ),
       ),
 
