@@ -5,104 +5,51 @@ import 'package:audioplayers/audio_cache.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
-  void playSound(int soundNum) {
+  void playSound(int soundNumber) {
     final player = AudioCache();
-    player.play('note$soundNum.wav');
+    player.play('note$soundNumber.wav');
+  }
+
+  Expanded buildKey({color:Colors, int soundNumber}) {
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: FlatButton(
+          color: color,
+          onPressed: () {
+            playSound(soundNumber);
+          },
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        appBar: AppBar(title: Center(child: Text('Xylophone')),backgroundColor: Colors.black,),
-        body: SafeArea(
-      child: Column(
+        home: Scaffold(
+            backgroundColor: Colors.black,
+            appBar: AppBar(title: Center(child: Text('Xylophone'),),
+              backgroundColor: Colors.black,),
+            body: SafeArea(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
 
-        crossAxisAlignment:CrossAxisAlignment.stretch,
-      children: <Widget>[
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
+                buildKey(color:Colors.deepPurple,soundNumber:1),
+                buildKey(color:Colors.blueAccent,soundNumber:2),
+                buildKey(color:Colors.lightBlueAccent,soundNumber:3),
+                buildKey(color:Colors.green,soundNumber:4),
+                buildKey(color:Colors.yellow,soundNumber:5),
+                buildKey(color:Colors.orange,soundNumber:6),
+                      buildKey(color:Colors.red,soundNumber:7),
 
-          color: Colors.deepPurple,
-            onPressed: () {
-              playSound(1);
-            },
-          ),
-        ),
-      ),
-      Expanded(child:Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: FlatButton(
-          color: Colors.blue,
-          onPressed: () {
-            playSound(2);
-          },
-        ),
-      ),),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            color: Colors.lightBlueAccent,
-            onPressed: () {
-              playSound(3);
-            },
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            color: Colors.green,
-            onPressed: () {
-              playSound(4);
-            },
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            color: Colors.yellow,
-            onPressed: () {
-              playSound(5);
-            },
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            color: Colors.orange,
-            onPressed: () {
-              playSound(6);
-            },
-          ),
-        ),
-      ),
-      Expanded(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FlatButton(
-            color: Colors.red,
-            onPressed: () {
-              playSound(7);
-            },
-          ),
-        ),
-      ),
-
-      ],
-    ),)
+    ],
+    ),
+    )
     ,
     )
     ,
     );
-  }
+    }
 }
